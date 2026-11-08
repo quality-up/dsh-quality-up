@@ -2,8 +2,6 @@
 
 Copyright (c) 2026 质上开源质量平台贡献者 / Zhishang Open-Source Quality Platform contributors
 
-本插件（`dsh-quality-up`，含 Host 半、Client 半、统计/文档引擎移植与页面资源）以 MIT 许可开源发布。
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
