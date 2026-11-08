@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Zhishang Open-Source Quality Platform",
+    "description": "An open-source (MIT) quality improvement platform: every number is computed by the built-in statistics engine, all business data is persisted to a local SQLite database, reports are exported as real Word/Excel files, and AI chat uses the real model currently configured in DeepSeek Harness. 16 real quality tools are exposed to the agent."
+  }
+}

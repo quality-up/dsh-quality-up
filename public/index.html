@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>质上开源质量平台</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b3ea8'/><text x='50' y='68' font-size='58' text-anchor='middle' fill='white' font-family='sans-serif'>质</text></svg>">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="topnav">
+    <div class="brand" data-act="goto" data-args='{"page":"dashboard"}'>
+      <div class="logo-icon">质</div>
+      <div>
+        <div class="logo-name" id="brandName">质上开源质量平台</div>
+        <div class="scale-switch" id="scaleSwitch">
+          <span class="sc on" data-act="scalePick" data-args='{"scale":"large"}'>大中型企业版</span>
+          <span class="sc" data-act="scalePick" data-args='{"scale":"sme"}'>中小型企业版</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="nav" id="nav">
+      <div class="nav-item active" data-page="dashboard"><span class="ico">📊</span>质量驾驶舱</div>
+
+      <div class="nav-menu">
+        <div class="nav-item nav-parent"><span class="ico">🤖</span>AI 工作台<span class="caret">▾</span></div>
+        <div class="nav-drop">
+          <div class="nav-item" data-page="aiwb"><span class="ico">🤖</span>AI 改进工作台<span class="badge blue">AI</span></div>
+          <div class="nav-item" data-page="problem"><span class="ico">⚠️</span>质量问题库</div>
+          <div class="nav-item" data-page="eightd"><span class="ico">🧩</span>质量改进项目</div>
+          <div class="nav-item" data-page="qrqc"><span class="ico">⚡</span>QRQC 快速响应</div>
+          <div class="nav-item" data-page="report"><span class="ico">📑</span>报表中心</div>
+        </div>
+      </div>
+
+      <div class="nav-menu" id="navAnalysis">
+        <div class="nav-item nav-parent"><span class="ico">📈</span>数据分析<span class="caret">▾</span></div>
+        <div class="nav-drop">
+          <div class="nav-item" data-page="spc"><span class="ico">📈</span>SPC 智能判异</div>
+          <div class="nav-item" data-page="market"><span class="ico">🌍</span>市场质量与客诉</div>
+          <div class="nav-item" data-page="benefit"><span class="ico">💰</span>改进收益核算</div>
+        </div>
+      </div>
+
+      <!-- 中小型企业版专用：体系文件（调研 → 手册 → 程序文件） -->
+      <div class="nav-menu" id="navQms" style="display:none;">
+        <div class="nav-item nav-parent"><span class="ico">📘</span>体系文件<span class="caret">▾</span></div>
+        <div class="nav-drop">
+          <div class="nav-item" data-page="qmsSurvey"><span class="ico">📝</span>填写体系调研</div>
+          <div class="nav-item" data-page="qmsManual"><span class="ico">📕</span>一键生成手册</div>
+          <div class="nav-item" data-page="qmsProc"><span class="ico">📗</span>一键生成程序文件</div>
+        </div>
+      </div>
+
+      <div class="nav-menu">
+        <div class="nav-item nav-parent"><span class="ico">📚</span>知识与团队<span class="caret">▾</span></div>
+        <div class="nav-drop">
+          <div class="nav-item" data-page="knowledge"><span class="ico">📚</span>知识库与经验传承</div>
+          <div class="nav-item" data-page="growth"><span class="ico">🎓</span>员工成长中心</div>
+        </div>
+      </div>
+
+      <div class="nav-menu">
+        <div class="nav-item nav-parent"><span class="ico">🧱</span>系统<span class="caret">▾</span></div>
+        <div class="nav-drop">
+          <div class="nav-item" data-page="init"><span class="ico">🏷️</span>初始设置</div>
+          <div class="nav-item" data-page="approval"><span class="ico">✅</span>审批中心与待办<span class="badge" id="badgeTodo" style="display:none;"></span></div>
+          <div class="nav-item" data-page="arch"><span class="ico">🧱</span>DeepSeek 插件架构</div>
+          <div class="nav-item" data-page="mobile"><span class="ico">📱</span>移动端适配</div>
+          <div class="nav-item" data-page="audit"><span class="ico">🔍</span>审计日志</div>
+          <div class="nav-item" data-page="settings"><span class="ico">⚙️</span>系统设置</div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav-right">
+      <span class="ds-chip" id="chipModel">模型未配置</span><span class="ds-chip pu">深度推理</span>
+      <span class="ds-chip" id="chipStatus">检查中…</span>
+      <div class="nav-org" id="navOrg">某制造型企业 · 质量改进部门</div>
+      <div class="avatar" data-act="profile" title="当前用户">李工</div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="topbar">
+      <div>
+        <div class="topbar-title" id="pgTitle">质量驾驶舱</div>
+        <div class="topbar-sub" id="pgSub">加载中…</div>
+      </div>
+      <div class="searchbox" data-act="openSearch"><span class="ic">🔍</span><span class="tx">问问 AI：输入问题或 @系统 名，如「@MES 查昨日二车间报废」</span></div>
+      <div class="ai-btn" data-act="goto" data-args='{"page":"aiwb"}'>🤖 AI工作助手</div>
+      <div class="qt-btn" data-act="qtOpen">🧰 质量工具skill</div>
+    </div>
+    <div class="content" id="content"></div>
+  </div>
+</div>
+
+<!-- 质量工具菜单（三列） -->
+<div class="qt-overlay" id="qtOverlay">
+  <div class="qt-panel">
+    <div class="qt-head"><span class="t">🧰 质量工具 skill</span><span class="s">点击即用 · 数据类工具由统计引擎实算</span><span class="dm-close" style="margin-left:auto;" data-act="qtClose">✕</span></div>
+    <div class="qt-grid" id="qtGrid"></div>
+    <div class="qt-foot">带 <b>∑</b> 标记的工具会真实计算并返回结果（可用平台已有数据或你输入的数据）；其余工具由 AI 智能体引导完成。</div>
+  </div>
+</div>
+
+<div id="toastWrap"></div>
+
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/pages-core.js"></script>
+<script src="js/pages-analytics.js"></script>
+<script src="js/pages-kb.js"></script>
+<script src="js/pages-system.js"></script>
+<script src="js/pages-qms.js"></script>
+<script src="js/tool-wizards.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+

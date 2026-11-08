@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "质上开源质量平台",
+    "description": "开源质量改进平台（MIT）：所有数字由内置统计引擎实算，所有数据写入本机 SQLite 数据库，报告导出为真正的 Word/Excel 文件；AI 对话调用 DeepSeek Harness 当前登录的真实模型，并把 16 个真实质量工具交给智能体。"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "name": "dsh-quality-up",
+  "version": "2.0.0",
+  "private": false,
+  "type": "module",
+  "description": "开源质量改进平台（DeepSeek Harness 插件）：真实 SQLite 数据库、真实统计引擎（SPC/八大判异/Cpk/GR&R/DOE）、真实 Word/Excel 报告导出；对话默认锁定 DeepSeek-V4.1-Flash（deepseek-official / deepseek-flash），并把 16 个真实质量工具交给智能体。",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quality-up/dsh-quality-up.git"
+  },
+  "homepage": "https://github.com/quality-up/dsh-quality-up#readme",
+  "bugs": {
+    "url": "https://github.com/quality-up/dsh-quality-up/issues"
+  },
+  "author": "质上开源质量平台贡献者",
+  "icon": "./icon.svg",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "open-source",
+    "quality",
+    "quality-management",
+    "spc",
+    "iso9001",
+    "iatf16949",
+    "pdca",
+    "8d",
+    "manufacturing",
+    "sqlite"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.2.0-rc.2 || >=0.2.1-rc.2 || >=0.2.2-alpha.3"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "host.cjs",
+    "agent-host.cjs",
+    "llm-bridge.cjs",
+    "db.cjs",
+    "tools-dsh.cjs",
+    "src/**/*.js",
+    "src/package.json",
+    "public/**/*",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "自检.cjs",
+    "CONTRIBUTING.md",
+    "LICENSE.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.0-rc.2": "compatible",
+        "0.2.2-rc.1": "compatible"
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+# dsh-quality-up 插件包：Host 行加载 index.js（真数据 / 真模型 / 真文件），
+# 包内 `dsh.client` 声明让 Web 端把 ./client.js 作为浏览器半加载。
+- insert:
+    - id: dsh-quality-up
+      name: 'dsh-quality-up'
