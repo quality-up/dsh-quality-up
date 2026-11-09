@@ -2,6 +2,20 @@
 
 把一套可运行的本地质量平台，做成 **DeepSeek Harness 里真能用的整页插件**。开源（MIT），可直接私有化部署、二次开发。
 
+## 一键安装并启动
+
+安装 **Node.js 24.9.0 或更新版本**后，在 Windows CMD、PowerShell 或终端运行这一条命令：
+
+```text
+npx --yes -p @deepseek-ai/dsh@0.2.2-rc.1 -p pnpm@10 -c "dsh plugin --profile web add https://codeload.github.com/quality-up/dsh-quality-up/tar.gz/refs/heads/main && dsh web"
+```
+
+命令会下载 Harness 和插件，将插件装入本机的 `web` 配置，然后启动 Harness 并自动打开默认浏览器。进入后，从左侧栏点击 **质上开源质量平台**。配置过公司名称的用户会看到对应的公司名。
+
+首次下载可能需要几分钟。首次使用 AI 时，请按 Harness 页面提示接入 DeepSeek 模型。已有 Harness Web 实例时，先关闭旧实例再运行命令。安装完成后，日常启动可用 `npx --yes @deepseek-ai/dsh@0.2.2-rc.1 web`。
+
+[更多安装方式](安装说明.md) · [Harness 官方 CLI 参考](https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/cli/reference/README.md)
+
 > **本插件里没有编造的数据、没有预设的话术。**
 >
 > - 页面上的每个数字都由插件内置的**统计引擎**（SPC 控制图、GB/T 4091 八大判异、Cp/Cpk/Pp/Ppk、t/F/卡方、回归、GR&R、DOE、FMEA-AP、帕累托）对数据库里的测量数据实算；
@@ -55,7 +69,7 @@ node --check host.cjs && node --check public/app.js
 
 | 项目 | 值 |
 | --- | --- |
-| 插件包 | `dsh-quality-up` v2.0.0（本仓库目录） |
+| 插件包 | `dsh-quality-up` v2.0.1（本仓库目录） |
 | 安装状态 | 装入 DSH/Reasonix 的 `web` profile 后，**重开应用**生效 |
 | 打开方式 | 左侧栏图标（显示名跟随「初始设置 → 公司名称」）→ 主面板整页打开 |
 | 页面地址 | `http://127.0.0.1:<Harness 端口>/qip/`（插件 Host 半托管，同源；面板里用 iframe 承载，样式与 Harness 完全隔离） |

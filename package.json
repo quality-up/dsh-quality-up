@@ -1,6 +1,6 @@
 {
   "name": "dsh-quality-up",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": false,
   "type": "module",
   "description": "开源质量改进平台（DeepSeek Harness 插件）：真实 SQLite 数据库、真实统计引擎（SPC/八大判异/Cpk/GR&R/DOE）、真实 Word/Excel 报告导出；对话默认锁定 DeepSeek-V4.1-Flash（deepseek-official / deepseek-flash），并把 16 个真实质量工具交给智能体。",
@@ -48,12 +48,14 @@
     "llm-bridge.cjs",
     "db.cjs",
     "tools-dsh.cjs",
+    "cordis.patch.yml",
     "src/**/*.js",
     "src/package.json",
     "public/**/*",
     "locale/*.json",
     "icon.svg",
     "README.md",
+    "安装说明.md",
     "自检.cjs",
     "CONTRIBUTING.md",
     "LICENSE.md"
