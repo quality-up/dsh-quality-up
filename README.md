@@ -7,17 +7,17 @@
 安装 **Node.js 24.9.0 或更新版本**后，在 Windows CMD、PowerShell 或终端运行这一条命令：
 
 ```text
-npx --yes -p @deepseek-ai/dsh@0.2.2-rc.1 -p pnpm@11 -c "dsh plugin --profile web add https://codeload.github.com/quality-up/dsh-quality-up/tar.gz/refs/heads/main && dsh web"
+npx --yes -p @deepseek-ai/dsh@0.2.2-rc.1 -p pnpm@11 -c "dsh plugin --profile web add https://codeload.github.com/quality-up/dsh-quality-up/tar.gz/refs/heads/main && dsh web --port 0"
 ```
 
-命令会下载 Harness 和插件，将插件装入本机的 `web` 配置，然后启动 Harness 并自动打开默认浏览器。进入后，从左侧栏点击 **质上开源质量平台**。配置过公司名称的用户会看到对应的公司名。
+命令会下载 Harness 和插件，将插件装入本机的 `web` 配置，然后让系统分配一个空闲端口，启动 Harness 并自动打开默认浏览器。进入后，从左侧栏点击 **质上开源质量平台**。配置过公司名称的用户会看到对应的公司名。
 
-首次下载可能需要几分钟。首次使用 AI 时，请按 Harness 页面提示接入 DeepSeek 模型。已有 Harness Web 实例时，先关闭旧实例再运行命令。
+首次下载可能需要几分钟。首次使用 AI 时，请按 Harness 页面提示接入 DeepSeek 模型。如果同一配置的 Harness 已在运行，可继续使用原浏览器标签。安装或更新插件后，重启该 Harness 实例即可加载插件。
 
 如果左侧栏已经有 **质上开源质量平台**，日常启动直接运行：
 
 ```text
-npx --yes @deepseek-ai/dsh@0.2.2-rc.1 web
+npx --yes @deepseek-ai/dsh@0.2.2-rc.1 web --port 0
 ```
 
 如果安装时报 `ERR_PNPM_UNEXPECTED_STORE`，看报错中的现有 store 路径。路径末尾是 `v11` 时使用上面的 `pnpm@11`，末尾是 `v10` 时，把一键安装命令中的 `pnpm@11` 换成 `pnpm@10`。使用与现有 Harness 配置匹配的版本即可继续安装。
